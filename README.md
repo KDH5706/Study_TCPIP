@@ -23,5 +23,16 @@ TcpIp 학습 리포지토리
   - Iterative 에코 서버, 에코 클라이언트 구현
   - vmnetcfg 설정 및 VMWare 가상 머신을 통한 Linux 환경에서의 타 PC와의 TCP 통신
   
+## 3일차
+- TCP 기반 서버, 클라이언트 구현(응용)
+  - 서버가 연산을 하여 결과를 리턴하는 계산기 시스템 구현
+- TCP 통신 이론 학습
+  - Three-way handshaking을 통한 상태 소켓과의 연결 이론 이해
+  - ACK 메시지와 패킷의 SEQ를 통한 상대 소켓과의 데이터 송수신 이론 이해
+  - Four-way handshaking을 통한 상대 소켓과의 연결 종료 이론 이해
+- UDP 기반 서버, 클라이언트 구현
+  - Iterative 에코 서버, 에코 클라이언트 구현
+  - vmnetcfg 설정 및 VMWare 가상 머신을 통한 Linux 환경에서의 타 PC와의 UDP 통신
+- UDP의 데이터 송수신 특성
+  - 데이터의 경계(Datagram)가 존재하는 UDP 소켓의 송수신 프로세스 이해
   
- 
