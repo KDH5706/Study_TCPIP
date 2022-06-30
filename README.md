@@ -36,3 +36,17 @@ TcpIp 학습 리포지토리
 - UDP의 데이터 송수신 특성
   - 데이터의 경계(Datagram)가 존재하는 UDP 소켓의 송수신 프로세스 이해
   
+## 4일차
+- connected UDP 소켓의 개념 학습
+- Half-close의 필요성에 대한 학습
+  - shutdown(int sock, int howto) 함수 이해
+  - Half-close 기반의 파일 전송 시스템 구현
+- DNS 서버에 대한 학습
+  - 도메인 이름으로 IP주소 얻기
+  - IP주소로 도메인 정보 얻기
+- 소켓 옵션과 입출력 버퍼의 크기 학습()
+  - SO_TYPE을 통해 TCP 소켓 및 UDP 소켓 타입 확인
+  - SO_SNDBUF & SO_RCVBUF 크기 확인 및 설정
+- 주소 할당 에러 발생에 대한 이론 이해
+  - Time-wait 상태 및 주소의 재할당 학습
+- Nagle 알고리즘 이론 이해
