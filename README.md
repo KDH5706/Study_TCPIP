@@ -1,4 +1,4 @@
-# Study_TcpIp
+# Study_TCPIP
 TcpIp 학습 리포지토리
 
 ## 1일차
