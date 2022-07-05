@@ -5,7 +5,7 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 
-#define BUF_SIZE 30
+#define BUF_SIZE 1024
 void error_handling(char *message);
 
 int main(int argc, char *argv[])
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	struct sockaddr_in serv_adr;
 	if(argc != 2)
 	{
-		printf("Usage: %s <file_name>\n", argv[0]);
+		printf("Usage: %s <file_name> \n", argv[0]);
 		exit(1);
 	}
 
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	connect(sd, (struct sockaddr*)&serv_adr, sizeof(serv_adr));
 
 	while((read_cnt = read(sd, buf, BUF_SIZE)) != 0)
-		fwrite((void*)buf, 1,read_cnt, fp);
+		fwrite((void*)buf, 1, read_cnt, fp);
 
 	puts("Received file data");
 	write(sd, "Thank you", 10);
