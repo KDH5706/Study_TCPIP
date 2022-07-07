@@ -54,20 +54,22 @@ int main(int argc, char* argv[])
 		puts("New client connection");
 
 		read(clnt_sock, buf, sizeof(buf));
-		printf("%s \n", buf);
+		//printf("%s \n", buf);
 
-		if(!strncmp(buf, "GET /image.jpg", 14))
+		if(!strncmp(buf, "GET / HTTP/1.1", 14))
+		{
+			puts("   Send Hypertext to client");
+			write(clnt_sock, webpage, sizeof(webpage)-1);
+		}
+		else if(!strncmp(buf, "GET /image.jpg", 14))
 		{
 			fdimg = open("image.jpg", O_RDONLY);
-
 			read(fdimg, img_buf, sizeof(img_buf));
+
+			puts("   Send Image to client");
 			write(clnt_sock, img_buf, sizeof(img_buf));
 		}
-		else if(!strncmp(buf, "GET / HTTP/1.1", 14))
-		{
-			write(clnt_sock, webpage, sizeof(webpage)-1);
-			puts("closing");
-		}
+		puts("closing");
 		close(clnt_sock);
 	}
 	close(serv_sock);
